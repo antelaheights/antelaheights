@@ -126,10 +126,12 @@ h2 {
 
 /* GALLERY */
 .gallery img {
-  width: 100%;
-  max-width: 350px;
-  margin: 10px;
-  border-radius: 10px;
+    width: 100%;
+    max-width: 350px;
+    height: 250px;       /* Set a fixed height */
+    object-fit: cover;   /* This crops the image to fit the box without stretching it */
+    margin: 10px;
+    border-radius: 10px;
 }
 
 /* CONTACT FORM */
