@@ -1,0 +1,33 @@
+body {
+  font-family: Arial;
+  margin: 0;
+  text-align: center;
+}
+
+.hero {
+  background: url('images/hero.jpg') center/cover no-repeat;
+  color: white;
+  padding: 120px 20px;
+}
+
+.btn {
+  background: #2e8b57;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+section {
+  padding: 50px 20px;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+}
