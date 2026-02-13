@@ -9,7 +9,7 @@
 <meta name="keywords" content="Antela Heights, Luxury Farmhouses, Investment Property, Real Estate Investment, Premium Living">
 <meta name="author" content="Antela Heights">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -29,23 +29,24 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 15px 60px;
+    padding: 15px 5%; /* Changed from 60px to 5% for better spacing */
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: #ffffff;
     box-shadow: 0 6px 20px rgba(0,0,0,0.05);
     z-index: 1000;
+    box-sizing: border-box; /* Ensures padding doesn't add to width */
 }
 
 .logo {
-    height: 55px;
+    height: 45px; /* Slightly smaller for better fit */
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 15px; /* Reduced from 20px to prevent overflow */
     margin: 0;
     padding: 0;
 }
@@ -54,25 +55,26 @@ nav ul li a {
     text-decoration: none;
     color: #1c3d2b;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px; /* Slightly smaller font to ensure fit */
     letter-spacing: 0.5px;
     position: relative;
     transition: 0.3s;
 }
 
-nav ul li a::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    left: 0;
-    bottom: -6px;
-    background: #d4af37;
-    transition: 0.3s;
-}
-
-nav ul li a:hover::after {
-    width: 100%;
+/* Tablet/Mobile Fix: If screen is small, reduce spacing further */
+@media (max-width: 768px) {
+    nav {
+        padding: 10px 3%;
+    }
+    nav ul {
+        gap: 10px;
+    }
+    nav ul li a {
+        font-size: 14px;
+    }
+    .logo {
+        height: 35px;
+    }
 }
 
 /* ================= HERO ================= */
