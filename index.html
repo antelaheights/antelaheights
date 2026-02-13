@@ -27,25 +27,35 @@ body {
 nav {
     position: fixed;
     width: 100%;
-    padding: 18px 60px;
+    padding: 15px 40px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background: rgba(20, 45, 32, 0.85); /* deep green */
-    backdrop-filter: blur(10px);
+    background: linear-gradient(to right, #1c3d2b, #214d36);
     z-index: 1000;
 }
 
-nav a {
+/* Logo */
+nav .logo {
+    height: 55px;
+}
+
+/* Menu container */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 35px;  /* controls spacing between menu items */
+    margin-left: auto;  /* pushes menu to right */
+}
+
+nav ul li a {
     color: #f5f1e8;
     text-decoration: none;
-    margin: 0 18px;
     font-weight: 500;
     transition: 0.3s ease;
 }
 
-nav a:hover {
-    color: #d4af37; /* gold */
+nav ul li a:hover {
+    color: #d4af37;
 }
 
 /* HERO */
@@ -183,7 +193,7 @@ iframe {
 </head>
 
 <body>
-
+  
 <nav>
   <a href="#home">Home</a>
   <a href="#about">About</a>
