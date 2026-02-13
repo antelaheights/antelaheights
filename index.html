@@ -160,9 +160,9 @@ h2 {
 
 .amenities {
   display: grid;
-  grid-template-columns: repeat(3, 320px);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
   gap: 40px;
-  justify-content: center;  /* This centers the whole grid */
+  justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
 }
