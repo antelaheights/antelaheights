@@ -25,31 +25,30 @@ body {
 
 /* ================= NAVBAR ================= */
 
-/* ================= CENTERED NAVBAR ================= */
-
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 10px 0;
+    padding: 15px 0;
     display: flex;
     align-items: center;
-    justify-content: center; /* Centers the whole group */
+    justify-content: center;
     background: #ffffff;
     box-shadow: 0 6px 20px rgba(0,0,0,0.05);
     z-index: 1000;
-    gap: 40px; /* Space between the lists and the logo */
+    gap: 60px; /* Increased gap to give the logo more room */
+    box-sizing: border-box;
 }
 
 .logo {
-    height: 65px; /* Slightly larger since it's the centerpiece */
+    height: 75px; /* Slightly larger logo for the center piece */
     transition: 0.3s;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 30px; /* Space between individual links */
+    gap: 40px; /* Wider spacing between links */
     margin: 0;
     padding: 0;
     align-items: center;
@@ -58,9 +57,9 @@ nav ul {
 nav ul li a {
     text-decoration: none;
     color: #1c3d2b;
-    font-weight: 500;
-    font-size: 17px;
-    letter-spacing: 0.5px;
+    font-weight: 600; /* Bolder weight for luxury feel */
+    font-size: 22px;  /* Increased size as requested */
+    letter-spacing: 1px;
     position: relative;
     transition: 0.3s;
 }
@@ -70,7 +69,7 @@ nav ul li a::after {
     content: "";
     position: absolute;
     width: 0%;
-    height: 2px;
+    height: 3px;
     left: 0;
     bottom: -6px;
     background: #d4af37;
@@ -81,18 +80,20 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
-/* Responsive Fix: Stack on mobile */
+/* Mobile Fix */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
-        gap: 10px;
-        padding: 15px 0;
-    }
-    nav ul {
         gap: 15px;
     }
+    nav ul {
+        gap: 20px;
+    }
     nav ul li a {
-        font-size: 14px;
+        font-size: 18px;
+    }
+    .logo {
+        height: 50px;
     }
 }
  
@@ -350,8 +351,7 @@ section {
 
     <ul>
         <li><a href="#amenities">Amenities</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#gallery">Gallery</a></li> 
     </ul>
 </nav>
 
