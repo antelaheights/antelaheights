@@ -29,72 +29,40 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 15px 0;
+    padding: 10px 5%;
     display: flex;
     align-items: center;
     justify-content: center;
     background: #ffffff;
     box-shadow: 0 6px 20px rgba(0,0,0,0.05);
     z-index: 1000;
-    gap: 60px; /* Increased gap to give the logo more room */
     box-sizing: border-box;
 }
 
-.logo {
-    height: 75px; /* Slightly larger logo for the center piece */
-    transition: 0.3s;
-}
+/* These two rules force the logo to the exact center */
+.nav-left { justify-content: flex-end; flex: 1; }
+.nav-right { justify-content: flex-start; flex: 1; }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 40px; /* Wider spacing between links */
+    gap: 50px; /* Large gap for a premium feel */
     margin: 0;
     padding: 0;
-    align-items: center;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #1c3d2b;
-    font-weight: 600; /* Bolder weight for luxury feel */
-    font-size: 22px;  /* Increased size as requested */
+    font-weight: 600;
+    font-size: 24px; /* Increased size as requested */
     letter-spacing: 1px;
-    position: relative;
     transition: 0.3s;
 }
 
-/* Luxury underline effect */
-nav ul li a::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 3px;
-    left: 0;
-    bottom: -6px;
-    background: #d4af37;
-    transition: 0.3s;
-}
-
-nav ul li a:hover::after {
-    width: 100%;
-}
-
-/* Mobile Fix */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        gap: 15px;
-    }
-    nav ul {
-        gap: 20px;
-    }
-    nav ul li a {
-        font-size: 18px;
-    }
-    .logo {
-        height: 50px;
-    }
+.logo {
+    height: 80px; 
+    margin: 0 40px; /* Space around the logo */
 }
  
 /* ================= HERO ================= */
@@ -122,14 +90,23 @@ nav ul li a:hover::after {
 }
 
 .hero h1 {
-  font-size: 60px;
-  margin-bottom: 10px;
+    font-size: 64px; /* Larger, more commanding title */
+    margin-bottom: 5px;
 }
 
-.hero p {
-  font-size: 20px;
-  max-width: 650px;
-  margin: 5px 0;
+.hero-tagline {
+    font-size: 26px;
+    color: #d4af37; /* Golden accent for the main tagline */
+    margin-bottom: 10px;
+}
+
+.hero-subtext {
+    font-size: 18px;
+    max-width: 750px;
+    line-height: 1.6;
+    margin: 20px auto;
+    font-weight: 300;
+    opacity: 0.9;
 }
 
 /* Premium Button */
