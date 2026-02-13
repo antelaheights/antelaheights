@@ -26,31 +26,36 @@ body {
 /* NAVIGATION */
 nav {
     position: fixed;
+    top: 0;
     width: 100%;
-    padding: 15px 40px;
+    padding: 18px 60px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background: linear-gradient(to right, #1c3d2b, #214d36);
     z-index: 1000;
 }
 
 /* Logo */
-nav .logo {
-    height: 55px;
+.logo {
+    height: 60px;
 }
 
-/* Menu container */
+/* Menu */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 35px;  /* controls spacing between menu items */
-    margin-left: auto;  /* pushes menu to right */
+    gap: 40px;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li a {
     color: #f5f1e8;
     text-decoration: none;
     font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.5px;
     transition: 0.3s ease;
 }
 
@@ -195,7 +200,7 @@ iframe {
 <body>
   
 <nav>
-    <img src="images/logo.png" class="logo">
+    <img src="logo.png" class="logo">
 
     <ul>
         <li><a href="#home">Home</a></li>
