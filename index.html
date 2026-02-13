@@ -28,11 +28,12 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 18px 60px;
+    padding: 18px 70px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(to right, #1c3d2b, #214d36);
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
     z-index: 1000;
 }
 
@@ -45,24 +46,37 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 40px;
+    gap: 45px;
     margin: 0;
     padding: 0;
 }
 
 nav ul li a {
-    color: #f5f1e8;
     text-decoration: none;
+    color: #1c3d2b; /* deep green from logo */
     font-weight: 500;
-    font-size: 16px;
+    font-size: 15px;
     letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -6px;
+    background: #d4af37; /* soft gold */
     transition: 0.3s ease;
 }
 
-nav ul li a:hover {
-    color: #d4af37;
+nav ul li a:hover::after {
+    width: 100%;
 }
 
+  
 /* HERO */
 
 .hero {
