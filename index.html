@@ -151,34 +151,105 @@ h2 {
   font-size: 17px;
 }
 
-/* ================= AMENITIES ================= */
+/* ================= AMENITIES ================= */ 
+  
+#amenities {
+  background: #f9f9f7;
+  padding: 100px 20px;
+}
 
 .amenities {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-  gap: 35px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: auto;
+  justify-items: center;
 }
 
 .amenity {
-  background: white;
-  padding: 35px 25px;
-  border-radius: 15px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.07);
-  transition: 0.4s;
+  background: #ffffff;
+  width: 100%;
+  max-width: 320px;
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  transition: all 0.4s ease;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1s ease forwards;
 }
 
+/* Gold Accent Line */
+.amenity::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: #d4af37;
+  border-radius: 0 0 4px 4px;
+}
+
+/* Hover Effect */
 .amenity:hover {
   transform: translateY(-10px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
 }
 
+/* Typography */
 .amenity h3 {
-  color: #1c3d2b;
   margin-bottom: 10px;
+  font-size: 20px;
+  color: #1c3d2b;
+  font-weight: 600;
 }
 
 .amenity p {
-  font-size: 14px;
+  font-size: 15px;
   color: #666;
+  line-height: 1.6;
+}
+
+/* Icon Styling */
+.amenity-icon {
+  width: 55px;
+  height: 55px;
+  margin-bottom: 20px;
+  stroke: #1c3d2b; /* Logo deep green */
+  stroke-width: 1.5;
+  fill: none;
+  transition: all 0.3s ease;
+}
+
+.amenity:hover .amenity-icon {
+  stroke: #d4af37; /* Gold on hover */
+  transform: scale(1.1);
+}
+
+/* Animation */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .amenities {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .amenities {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ================= GALLERY ================= */
@@ -282,32 +353,60 @@ section {
 
 <section id="amenities">
   <h2>Premium Amenities</h2>
-  <div class="amenities">
-    <div class="amenity">
-      <h3>Swimming Pool</h3>
-      <p>Resort-style pool designed for relaxation and leisure.</p>
-    </div>
-    <div class="amenity">
-      <h3>Gated Community</h3>
-      <p>Secure, private access ensuring peace of mind.</p>
-    </div>
-    <div class="amenity">
-      <h3>Landscaped Gardens</h3>
-      <p>Lush green spaces promoting wellness and calm living.</p>
-    </div>
-    <div class="amenity">
-      <h3>24x7 Security</h3>
-      <p>Round-the-clock surveillance and controlled entry.</p>
-    </div>
-    <div class="amenity">
-      <h3>Children Play Area</h3>
-      <p>Safe and joyful outdoor spaces for families.</p>
-    </div>
-    <div class="amenity">
-      <h3>Clubhouse</h3>
-      <p>Elegant social spaces for recreation and gatherings.</p>
-    </div>
+  <div class="amenity">
+    <svg class="amenity-icon" viewBox="0 0 24 24">
+     <path d="M2 20c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/>
+     <path d="M2 16c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/>
+    <path d="M7 4h10v4H7z"/>
+    </svg>
+  <h3>Swimming Pool</h3>
+  <p>Resort-style pool designed for relaxation and leisure.</p>
   </div>
+
+  <div class="amenity">
+   <svg class="amenity-icon" viewBox="0 0 24 24">
+    <rect x="4" y="8" width="16" height="12" rx="2"/>
+    <path d="M9 8V4h6v4"/>
+   </svg>
+  <h3>Gated Community</h3>
+  <p>Secure, private access ensuring peace of mind.</p>
+  </div>
+
+  <div class="amenity">
+   <svg class="amenity-icon" viewBox="0 0 24 24">
+    <path d="M12 22V12"/>
+    <path d="M8 14c0-3 4-6 4-6s4 3 4 6"/>
+    <path d="M6 10c0-2 3-4 6-4s6 2 6 4"/>
+   </svg>
+  <h3>Landscaped Gardens</h3>
+  <p>Lush green spaces promoting wellness and calm living.</p>
+  </div>
+
+  <div class="amenity">
+   <svg class="amenity-icon" viewBox="0 0 24 24">
+    <path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/>
+   </svg>
+  <h3>24x7 Security</h3>
+  <p>Round-the-clock surveillance and controlled entry.</p>
+  </div>
+
+<div class="amenity">
+   <svg class="amenity-icon" viewBox="0 0 24 24">
+    <circle cx="12" cy="8" r="4"/>
+    <path d="M4 20c2-4 6-6 8-6s6 2 8 6"/>
+   </svg>
+  <h3>Children Play Area</h3>
+  <p>Safe and joyful outdoor spaces for families.</p>
+</div>
+
+<div class="amenity">
+  <svg class="amenity-icon" viewBox="0 0 24 24">
+    <rect x="4" y="8" width="16" height="12"/>
+    <path d="M2 8l10-6 10 6"/>
+  </svg>
+  <h3>Clubhouse</h3>
+  <p>Elegant social spaces for recreation and gatherings.</p>
+ </div>
 </section>
 
 <section id="gallery">
@@ -325,8 +424,8 @@ section {
 </section>
 
 <section>
-  <h2>Location Advantage</h2>
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!..."></iframe>
+  <h2>Location Advantage</h2> 
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3539.1953879514945!2d76.0339529!3d27.4942983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396d158b02dc3edb%3A0xa2927801d2603b21!2sAntela%20Heights!5e0!3m2!1sen!2sin!4v1770965153631!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
 
 <section id="contact">
