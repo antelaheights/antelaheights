@@ -25,58 +25,77 @@ body {
 
 /* ================= NAVBAR ================= */
 
+/* ================= CENTERED NAVBAR ================= */
+
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 15px 5%; /* Changed from 60px to 5% for better spacing */
+    padding: 10px 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center; /* Centers the whole group */
     background: #ffffff;
     box-shadow: 0 6px 20px rgba(0,0,0,0.05);
     z-index: 1000;
-    box-sizing: border-box; /* Ensures padding doesn't add to width */
+    gap: 40px; /* Space between the lists and the logo */
 }
 
 .logo {
-    height: 45px; /* Slightly smaller for better fit */
+    height: 65px; /* Slightly larger since it's the centerpiece */
+    transition: 0.3s;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 15px; /* Reduced from 20px to prevent overflow */
+    gap: 30px; /* Space between individual links */
     margin: 0;
     padding: 0;
+    align-items: center;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #1c3d2b;
     font-weight: 500;
-    font-size: 18px; /* Slightly smaller font to ensure fit */
+    font-size: 17px;
     letter-spacing: 0.5px;
     position: relative;
     transition: 0.3s;
 }
 
-/* Tablet/Mobile Fix: If screen is small, reduce spacing further */
+/* Luxury underline effect */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -6px;
+    background: #d4af37;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Responsive Fix: Stack on mobile */
 @media (max-width: 768px) {
     nav {
-        padding: 10px 3%;
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 0;
     }
     nav ul {
-        gap: 10px;
+        gap: 15px;
     }
     nav ul li a {
         font-size: 14px;
     }
-    .logo {
-        height: 35px;
-    }
 }
-
+ 
 /* ================= HERO ================= */
 
 .hero {
@@ -320,10 +339,16 @@ section {
 <body>
 
 <nav>
-    <img src="logo.png" class="logo">
     <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
+    </ul>
+
+    <a href="#home">
+        <img src="logo.png" class="logo" alt="Antela Heights">
+    </a>
+
+    <ul>
         <li><a href="#amenities">Amenities</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#contact">Contact</a></li>
