@@ -249,18 +249,60 @@ h2 {
 
 /* ================= GALLERY ================= */
 
-.gallery img {
-    width: 100%;
-    max-width: 350px;
-    height: 250px;
-    object-fit: cover;
-    margin: 10px;
-    border-radius: 12px;
-    transition: 0.3s;
+#gallery {
+    overflow: hidden; /* Hides the scrollbar */
+    padding: 80px 0;  /* Full width feel */
 }
 
-.gallery img:hover {
-    transform: scale(1.05);
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: #f9f7f2;
+}
+
+.slider-track {
+    display: flex;
+    width: calc(350px * 12); /* Width of (image + margin) * total images */
+    animation: scroll 40s linear infinite; /* Adjust '40s' to change speed */
+}
+
+.slider-track img {
+    width: 350px;
+    height: 250px;
+    object-fit: cover;
+    margin: 0 10px;
+    border-radius: 15px;
+    flex-shrink: 0; /* Prevents images from squishing */
+    transition: transform 0.3s ease;
+}
+
+/* Pause on hover so users can look closely */
+.slider-container:hover .slider-track {
+    animation-play-state: paused;
+}
+
+.slider-track img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* The Animation */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-350px * 6)); } /* Moves by half the track */
+}
+
+/* Mobile Adjustment */
+@media (max-width: 768px) {
+    .slider-track img {
+        width: 280px;
+        height: 200px;
+    }
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-280px * 6)); }
+    }
 }
 
 /* ================= CONTACT ================= */
@@ -415,17 +457,24 @@ section {
 
 <section id="gallery">
   <h2>Project Gallery</h2>
-  <div class="gallery">
-    <img src="gallery1.jpg">
-    <img src="gallery2.jpeg">
-    <img src="gallery3.jpeg">
-    <img src="gallery4.jpg">
-    <img src="gallery5.jpg">
-    <img src="gallery6.jpg">
-    <img src="gallery7.png">
-    <img src="gallery8.png">
+  <div class="slider-container">
+    <div class="slider-track">
+      <img src="gallery1.jpg">
+      <img src="gallery2.jpeg">
+      <img src="gallery3.jpeg">
+      <img src="gallery4.jpg">
+      <img src="gallery5.jpg">
+      <img src="gallery6.jpg">
+      
+      <img src="gallery1.jpg">
+      <img src="gallery2.jpeg">
+      <img src="gallery3.jpeg">
+      <img src="gallery4.jpg">
+      <img src="gallery5.jpg">
+      <img src="gallery6.jpg">
+    </div>
   </div>
-</section>
+</section> 
 
 <section>
   <h2>Location Advantage</h2> 
