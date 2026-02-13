@@ -122,7 +122,7 @@ nav ul li a:hover::after {
 }
 
 .hero h1 {
-  font-size: 52px;
+  font-size: 60px;
   margin-bottom: 10px;
 }
 
@@ -340,7 +340,7 @@ section {
 <body>
 
 <nav>
-    <ul>
+    <ul class="nav-left">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
     </ul>
@@ -349,17 +349,21 @@ section {
         <img src="logo.png" class="logo" alt="Antela Heights">
     </a>
 
-    <ul>
+    <ul class="nav-right">
         <li><a href="#amenities">Amenities</a></li>
-        <li><a href="#gallery">Gallery</a></li> 
+        <li><a href="#gallery">Gallery</a></li>
     </ul>
 </nav>
 
 <section class="hero" id="home">
-  <img src="logo.png">
   <h1>Antela Heights</h1>
-  <p><strong>Happiest Farmhouses on Earth</strong></p>
+  <p class="hero-tagline"><strong>Happiest Farmhouses on Earth</strong></p>
   <p>Luxury Living with Strong Investment Growth Potential</p>
+  <p class="hero-subtext">
+    Experience an exquisite blend of nature's serenity and modern sophistication. 
+    Our premium farmhouses are designed for those who seek a sanctuary of peace 
+    without compromising on capital appreciation and elite living standards.
+  </p>
   <a href="#contact" class="btn">Enquire Now</a>
 </section>
 
