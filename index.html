@@ -166,6 +166,7 @@ h2 {
 }
 
 .amenity {
+  width: 260px;
   background: #ffffff;
   padding: 40px 30px;
   border-radius: 20px;
@@ -232,6 +233,18 @@ h2 {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+/* Responsive */
+@media (max-width: 1000px) {
+  .amenities {
+    grid-template-columns: repeat(2, 320px);
+  }
+}
+
+@media (max-width: 700px) {
+  .amenities {
+    grid-template-columns: 320px;
   }
 }
 
